@@ -1,0 +1,8 @@
+*.gif
+*.ico
+*.jpg
+*.obj
+*.bat
+*.command
+.idea/
+.DS_Store
