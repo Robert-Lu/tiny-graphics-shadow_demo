@@ -39,6 +39,7 @@ export class Shadow_Demo extends Scene {
             "square_2d": new Square(),
         };
 
+        // For the teapot
         this.stars = new Material(new Shadow_Textured_Phong_Shader(1), {
             color: color(.5, .5, .5, 1),
             ambient: .4, diffusivity: .5, specularity: .5,
@@ -46,13 +47,13 @@ export class Shadow_Demo extends Scene {
             light_depth_texture: null
 
         });
-        // For the floor
+        // For the floor or other plain objects
         this.floor = new Material(new Shadow_Textured_Phong_Shader(1), {
             color: color(1, 1, 1, 1), ambient: .3, diffusivity: 0.6, specularity: 0.4, smoothness: 64,
             color_texture: null,
             light_depth_texture: null
         })
-        // For the floor
+        // For the first pass
         this.pure = new Material(new Color_Phong_Shader(), {
         })
         // For light source
@@ -155,6 +156,10 @@ export class Shadow_Demo extends Scene {
     }
 
     render_scene(context, program_state, shadow_pass, draw_light_source=false, draw_shadow=false) {
+        // shadow_pass: true if this is the second pass that draw the shadow.
+        // draw_light_source: true if we want to draw the light source.
+        // draw_shadow: true if we want to draw the shadow
+
         let light_position = this.light_position;
         let light_color = this.light_color;
         const t = program_state.animation_time;
