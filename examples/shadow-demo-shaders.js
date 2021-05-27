@@ -90,7 +90,7 @@ export class Color_Phong_Shader extends defs.Phong_Shader {
         }
     }
 
-export class Shadow_Textured_Phong extends defs.Phong_Shader {
+export class Shadow_Textured_Phong_Shader extends defs.Phong_Shader {
         shared_glsl_code() {
             // ********* SHARED CODE, INCLUDED IN BOTH SHADERS *********
             return ` precision mediump float;

@@ -4,7 +4,7 @@ const {vec3, vec4, vec, color, Matrix, Mat4, Light, Shape, Material, Shader, Tex
 const {Cube, Axis_Arrows, Textured_Phong, Phong_Shader, Basic_Shader, Subdivision_Sphere} = defs
 
 import {Shape_From_File} from './obj-file-demo.js'
-import {Color_Phong_Shader, Shadow_Textured_Phong,
+import {Color_Phong_Shader, Shadow_Textured_Phong_Shader,
     Depth_Texture_Shader_2D, Buffered_Texture, LIGHT_DEPTH_TEX_SIZE} from './shadow-demo-shaders.js'
 
 // 2D shape, to display the texture buffer
@@ -39,7 +39,7 @@ export class Shadow_Demo extends Scene {
             "square_2d": new Square(),
         };
 
-        this.stars = new Material(new Shadow_Textured_Phong(1), {
+        this.stars = new Material(new Shadow_Textured_Phong_Shader(1), {
             color: color(.5, .5, .5, 1),
             ambient: .4, diffusivity: .5, specularity: .5,
             color_texture: new Texture("assets/stars.png"),
@@ -47,7 +47,7 @@ export class Shadow_Demo extends Scene {
 
         });
         // For the floor
-        this.floor = new Material(new Shadow_Textured_Phong(1), {
+        this.floor = new Material(new Shadow_Textured_Phong_Shader(1), {
             color: color(1, 1, 1, 1), ambient: .3, diffusivity: 0.6, specularity: 0.4, smoothness: 64,
             color_texture: null,
             light_depth_texture: null
