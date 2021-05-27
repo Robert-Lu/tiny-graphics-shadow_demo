@@ -41,14 +41,14 @@ export class Shadow_Demo extends Scene {
 
         this.stars = new Material(new Shadow_Textured_Phong(1), {
             color: color(.5, .5, .5, 1),
-            ambient: .3, diffusivity: .5, specularity: .5,
+            ambient: .4, diffusivity: .5, specularity: .5,
             color_texture: new Texture("assets/stars.png"),
             light_depth_texture: null
 
         });
         // For the floor
         this.floor = new Material(new Shadow_Textured_Phong(1), {
-            color: color(1, 1, 1, 1), ambient: .4, diffusivity: 0.5, specularity: 0.4, smoothness: 64,
+            color: color(1, 1, 1, 1), ambient: .3, diffusivity: 0.6, specularity: 0.4, smoothness: 64,
             color_texture: null,
             light_depth_texture: null
         })
