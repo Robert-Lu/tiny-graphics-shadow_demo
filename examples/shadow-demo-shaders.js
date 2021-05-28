@@ -198,7 +198,7 @@ export class Shadow_Textured_Phong_Shader extends defs.Phong_Shader {
                     // Sample the texture image in the correct place:
                     vec4 tex_color = texture2D( texture, f_tex_coord );
                     if (!use_texture)
-                        tex_color.xyz = vec3(0, 0, 0);
+                        tex_color = vec4(0, 0, 0, 1);
                     if( tex_color.w < .01 ) discard;
                     
                     // Compute an initial (ambient) color:
