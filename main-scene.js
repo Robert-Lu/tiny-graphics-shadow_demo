@@ -8,6 +8,7 @@ import {Surfaces_Demo} from "./examples/surfaces-demo.js"
 import {Text_Demo} from "./examples/text-demo.js"
 import {Transforms_Sandbox} from "./examples/transforms-sandbox.js"
 import {Shadow_Demo} from "./examples/shadow-demo.js"
+import {Tree_Demo} from "./examples/tree-demo.js"
 
 // Pull these names into this module's scope for convenience:
 const {
@@ -32,6 +33,7 @@ Object.assign(defs,
     {Obj_File_Demo},
     {Scene_To_Texture_Demo},
     {Surfaces_Demo},
+    {Tree_Demo},
     {Text_Demo},
     {Transforms_Sandbox},
     {Shadow_Demo});
@@ -40,7 +42,7 @@ Object.assign(defs,
 
 // (Can define Main_Scene's class here)
 
-const Main_Scene = Shadow_Demo;
+const Main_Scene = Tree_Demo;
 const Additional_Scenes = [];
 
 export {Main_Scene, Additional_Scenes, Canvas_Widget, Code_Widget, Text_Widget, defs}
